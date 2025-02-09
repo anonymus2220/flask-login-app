@@ -1,18 +1,28 @@
 from flask import Flask, render_template, request
 
-# Inizializza Flask e specifica la cartella dei template
 app = Flask(__name__, template_folder='templates')
+
+# Variabile per salvare i dati temporaneamente
+dati_inseriti = []
 
 @app.route('/')
 def home():
-    return render_template('pagina1.html')  # Carica il file HTML correttamente
+    return render_template('pagina1.html')
 
 @app.route('/pagina2', methods=['POST'])
 def pagina2():
-    username = request.form.get('username', '')  # Prende il nome utente dal form
-    password = request.form.get('password', '')  # Prende la password dal form
-    return render_template('pagina2.html', username=username, password=password)
+    username = request.form.get('username', '')
+    password = request.form.get('password', '')
+
+    # Salva i dati nella lista globale
+    dati_inseriti.append({'username': username, 'password': password})
+
+    return "✅ Dati ricevuti con successo!"
+
+@app.route('/admin')
+def admin():
+    return render_template('pagina2.html', dati=dati_inseriti)
 
 if __name__ == '__main__':
     print("✅ Flask sta partendo correttamente...")
-    app.run(debug=True, port=5003)  # Usa la porta 5003
+    app.run(debug=True, port=5000)
