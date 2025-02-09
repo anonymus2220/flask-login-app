@@ -19,4 +19,4 @@ def pagina2():
 
 if __name__ == '__main__':
     print("✅ Flask sta partendo correttamente...")
-    app.run(debug=True, port=5000)  # Usa la porta 5000
+    app.run(debug=True, host='0.0.0.0', port=int(os.environ.get('PORT', 8080)))
